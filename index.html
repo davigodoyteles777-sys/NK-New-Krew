@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NK NEW KREW #50 | Official Community</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black:#080808;
+  --dark:#101010;
+  --card:#171717;
+  --red:#ed1238;
+  --white:#f5f5f5;
+  --gray:#999;
+  --border:#292929;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  background:var(--black);
+  color:var(--white);
+  font-family:Inter,Arial,sans-serif;
+  overflow-x:hidden;
+}
+
+button,input,textarea,select {
+  font:inherit;
+}
+
+button {
+  cursor:pointer;
+}
+
+a {
+  text-decoration:none;
+  color:inherit;
+}
+
+h1,h2,h3,.logo,.big-number {
+  font-family:"Barlow Condensed",sans-serif;
+}
+
+::selection {
+  background:var(--red);
+  color:white;
+}
+
+/* ABERTURA */
+
+#intro {
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:#050505;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  transition:opacity .8s,visibility .8s;
+}
+
+#intro.hide {
+  opacity:0;
+  visibility:hidden;
+}
+
+.intro-logo {
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:clamp(100px,20vw,240px);
+  font-weight:900;
+  color:var(--red);
+  letter-spacing:-10px;
+  animation:introZoom 1.5s ease forwards;
+}
+
+.intro-text {
+  font-size:12px;
+  letter-spacing:6px;
+  color:#888;
+}
+
+@keyframes introZoom {
+  0% {
+    opacity:0;
+    transform:scale(.6);
+    filter:blur(15px);
+  }
+  100% {
+    opacity:1;
+    transform:scale(1);
+    filter:blur(0);
+  }
+}
+
+/* MENU */
+
+header {
+  position:sticky;
+  top:0;
+  z-index:100;
+  height:80px;
+  background:rgba(8,8,8,.94);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 5%;
+  gap:20px;
+}
+
+.logo {
+  font-size:30px;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+.logo span {
+  color:var(--red);
+}
+
+nav {
+  display:flex;
+  gap:24px;
+  align-items:center;
+}
+
+nav a {
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1px;
+  transition:.3s;
+}
+
+nav a:hover {
+  color:var(--red);
+}
+
+.header-actions {
+  display:flex;
+  gap:10px;
+}
+
+.btn {
+  background:var(--red);
+  color:white;
+  border:1px solid var(--red);
+  padding:13px 25px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  transition:.3s;
+}
+
+.btn:hover {
+  background:white;
+  border-color:white;
+  color:black;
+  transform:translateY(-3px);
+}
+
+.btn-outline {
+  background:transparent;
+  border:1px solid #555;
+}
+
+.btn-outline:hover {
+  border-color:var(--red);
+  background:var(--red);
+  color:white;
+}
+
+/* HOME */
+
+.hero {
+  min-height:690px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  padding:100px 7%;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 75% 50%,#570013 0%,transparent 42%),
+    linear-gradient(120deg,#070707,#141414);
+}
+
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(#ffffff08 1px,transparent 1px),
+    linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+  background-size:65px 65px;
+  mask-image:linear-gradient(to right,transparent,black);
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
+  max-width:850px;
+}
+
+.eyebrow {
+  color:var(--red);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:4px;
+  margin-bottom:25px;
+}
+
+.hero h1 {
+  font-size:clamp(75px,12vw,175px);
+  line-height:.78;
+  font-weight:900;
+  letter-spacing:-3px;
+}
+
+.hero h1 span {
+  color:var(--red);
+}
+
+.hero p {
+  margin:35px 0;
+  max-width:540px;
+  color:#aaa;
+  font-size:16px;
+  line-height:1.8;
+}
+
+.hero-buttons {
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.hero-background {
+  position:absolute;
+  right:5%;
+  top:50%;
+  transform:translateY(-50%) rotate(-12deg);
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:clamp(200px,32vw,520px);
+  font-weight:900;
+  color:#ffffff08;
+  pointer-events:none;
+}
+
+/* SEÇÕES */
+
+section {
+  scroll-margin-top:95px;
+}
+
+.container {
+  max-width:1350px;
+  margin:auto;
+  padding:110px 5%;
+}
+
+.section-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:30px;
+  margin-bottom:50px;
+}
+
+.section-label {
+  font-size:11px;
+  color:var(--red);
+  letter-spacing:4px;
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+.section-title {
+  font-size:clamp(50px,7vw,95px);
+  font-weight:800;
+  line-height:.9;
+  text-transform:uppercase;
+}
+
+.section-description {
+  color:#999;
+  font-size:13px;
+  max-width:300px;
+  line-height:1.8;
+}
+
+/* ESTATÍSTICAS */
+
+.stats {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+.stat {
+  padding:50px 25px;
+  text-align:center;
+  border-right:1px solid var(--border);
+}
+
+.stat:last-child {
+  border-right:none;
+}
+
+.big-number {
+  font-size:75px;
+  font-weight:900;
+  color:var(--red);
+}
+
+.stat p {
+  font-size:11px;
+  letter-spacing:2px;
+  color:#999;
+  margin-top:10px;
+}
+
+/* CARDS ANIMADOS COMO A REFERÊNCIA */
+
+.marquee-section {
+  padding:110px 0;
+  overflow:hidden;
+  background:#0b0b0b;
+}
+
+.marquee-title {
+  padding:0 5%;
+  margin-bottom:40px;
+}
+
+.marquee-track {
+  display:flex;
+  width:max-content;
+  gap:12px;
+  animation:moveLeft 32s linear infinite;
+}
+
+.marquee-track.reverse {
+  animation:moveRight 36s linear infinite;
+}
+
+.marquee-row {
+  overflow:hidden;
+  margin-bottom:12px;
+}
+
+.marquee-row:hover .marquee-track {
+  animation-play-state:paused;
+}
+
+.marquee-card {
+  width:230px;
+  height:105px;
+  background:linear-gradient(145deg,#191919,#0d0d0d);
+  border:1px solid #292929;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  transition:.3s;
+}
+
+.marquee-card:hover {
+  border-color:var(--red);
+  background:#21050b;
+}
+
+.marquee-card span {
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:32px;
+  font-weight:800;
+  letter-spacing:1px;
+  color:#eee;
+}
+
+.marquee-card:hover span {
+  color:var(--red);
+}
+
+@keyframes moveLeft {
+  from {transform:translateX(0)}
+  to {transform:translateX(-50%)}
+}
+
+@keyframes moveRight {
+  from {transform:translateX(-50%)}
+  to {transform:translateX(0)}
+}
+
+/* PERFIL */
+
+.profile-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.profile-card {
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:45px;
+  position:relative;
+  overflow:hidden;
+}
+
+.profile-card::after {
+  content:"NK";
+  position:absolute;
+  right:-15px;
+  bottom:-80px;
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:280px;
+  font-weight:900;
+  color:#ffffff05;
+  pointer-events:none;
+}
+
+.profile-avatar {
+  width:110px;
+  height:110px;
+  display:grid;
+  place-items:center;
+  background:var(--red);
+  color:white;
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:55px;
+  font-weight:900;
+  margin-bottom:30px;
+}
+
+.profile-card h3 {
+  font-size:45px;
+  margin-bottom:10px;
+}
+
+.profile-role {
+  color:var(--red);
+  letter-spacing:3px;
+  font-size:11px;
+  font-weight:800;
+}
+
+.profile-stats {
+  display:flex;
+  gap:45px;
+  margin-top:35px;
+}
+
+.profile-stats strong {
+  display:block;
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:48px;
+}
+
+.profile-stats small {
+  color:#999;
+  font-size:11px;
+  letter-spacing:2px;
+}
+
+.join-card {
+  background:linear-gradient(145deg,#33000b,#101010);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.join-card p {
+  color:#aaa;
+  line-height:1.8;
+  margin:20px 0 30px;
+}
+
+.join-card .btn {
+  align-self:flex-start;
+}
+
+/* RANKING */
+
+.ranking-table {
+  width:100%;
+  border-collapse:collapse;
+  min-width:600px;
+}
+
+.table-wrap {
+  overflow-x:auto;
+}
+
+.ranking-table th {
+  background:#1b1b1b;
+  text-align:left;
+  padding:22px;
+  color:#999;
+  font-size:11px;
+  letter-spacing:2px;
+}
+
+.ranking-table td {
+  padding:25px 22px;
+  border-bottom:1px solid var(--border);
+  font-weight:700;
+}
+
+.ranking-table tr:hover td {
+  background:#161616;
+}
+
+.rank-number {
+  color:var(--red);
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:30px;
+}
+
+/* CARDS */
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.info-card {
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:35px;
+  min-height:260px;
+  transition:.3s;
+}
+
+.info-card:hover {
+  border-color:var(--red);
+  transform:translateY(-7px);
+}
+
+.info-card .number {
+  color:var(--red);
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:45px;
+  font-weight:900;
+}
+
+.info-card h3 {
+  font-size:32px;
+  margin:20px 0;
+}
+
+.info-card p {
+  font-size:13px;
+  line-height:1.8;
+  color:#999;
+}
+
+/* CHAT */
+
+.chat-box {
+  border:1px solid var(--border);
+  background:#111;
+}
+
+.chat-header {
+  padding:25px;
+  background:#1c1c1c;
+  display:flex;
+  justify-content:space-between;
+  border-bottom:1px solid var(--border);
+}
+
+.chat-header strong {
+  letter-spacing:2px;
+}
+
+.chat-header span {
+  color:var(--red);
+  font-size:11px;
+  letter-spacing:2px;
+}
+
+.chat-messages {
+  height:340px;
+  overflow-y:auto;
+  padding:25px;
+}
+
+.message {
+  background:#202020;
+  border-left:2px solid var(--red);
+  padding:15px;
+  margin-bottom:12px;
+  overflow-wrap:anywhere;
+}
+
+.message strong {
+  color:var(--red);
+  font-size:12px;
+}
+
+.message p {
+  margin-top:8px;
+  font-size:13px;
+  line-height:1.6;
+}
+
+.chat-input {
+  display:flex;
+  gap:10px;
+  padding:20px;
+  background:#181818;
+}
+
+/* FORMULÁRIOS */
+
+input,textarea,select {
+  width:100%;
+  background:#181818;
+  border:1px solid #333;
+  color:white;
+  padding:16px;
+  outline:none;
+}
+
+input:focus,textarea:focus,select:focus {
+  border-color:var(--red);
+}
+
+textarea {
+  min-height:140px;
+  resize:vertical;
+}
+
+.form {
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.support-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+.support-text h3 {
+  font-size:55px;
+  line-height:1;
+}
+
+.support-text p {
+  color:#999;
+  line-height:1.9;
+  margin-top:25px;
+}
+
+.faq details {
+  border-bottom:1px solid #333;
+  padding:25px 0;
+}
+
+.faq summary {
+  font-weight:700;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.faq details p {
+  color:#999;
+  margin-top:20px;
+  line-height:1.8;
+}
+
+/* MODAL */
+
+.modal {
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  background:#000e;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal.active {
+  display:flex;
+}
+
+.modal-content {
+  background:#131313;
+  border:1px solid #444;
+  width:100%;
+  max-width:450px;
+  padding:45px;
+  position:relative;
+  animation:modalIn .3s ease;
+}
+
+@keyframes modalIn {
+  from {
+    opacity:0;
+    transform:translateY(25px);
+  }
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.modal-content h2 {
+  font-size:55px;
+  margin-bottom:20px;
+}
+
+.modal-content p {
+  color:#999;
+  font-size:13px;
+  margin-top:20px;
+}
+
+.modal-content a {
+  color:var(--red);
+  cursor:pointer;
+}
+
+.close {
+  position:absolute;
+  top:15px;
+  right:20px;
+  color:white;
+  background:none;
+  border:0;
+  font-size:30px;
+}
+
+/* NOTIFICAÇÃO */
+
+#toast {
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  z-index:2000;
+  padding:20px;
+  background:#202020;
+  border-left:3px solid var(--red);
+  display:none;
+  max-width:350px;
+  font-size:13px;
+}
+
+#toast.show {
+  display:block;
+}
+
+/* FOOTER */
+
+footer {
+  padding:70px 5%;
+  background:#101010;
+  border-top:1px solid #333;
+  text-align:center;
+}
+
+footer h2 {
+  font-size:65px;
+}
+
+footer h2 span {
+  color:var(--red);
+}
+
+footer p {
+  color:#888;
+  font-size:12px;
+  line-height:2;
+}
+
+/* SCROLL ANIMATION */
+
+.reveal {
+  opacity:0;
+  transform:translateY(35px);
+  transition:opacity .7s,transform .7s;
+}
+
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:1100px) {
+  header {
+    height:auto;
+    min-height:80px;
+    flex-wrap:wrap;
+    padding:20px 5%;
+  }
+
+  nav {
+    order:3;
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .stats {
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .profile-grid,.support-grid {
+    grid-template-columns:1fr;
+  }
+
+  .grid {
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:650px) {
+  .hero {
+    min-height:550px;
+    padding:70px 5%;
+  }
+
+  .hero h1 {
+    font-size:80px;
+  }
+
+  .hero-background {
+    display:none;
+  }
+
+  .grid {
+    grid-template-columns:1fr;
+  }
+
+  .stat {
+    padding:30px 10px;
+  }
+
+  .big-number {
+    font-size:48px;
+  }
+
+  .section-head {
+    flex-direction:column;
+    align-items:start;
+  }
+
+  .chat-input {
+    flex-direction:column;
+  }
+
+  .profile-card {
+    padding:25px;
+  }
+
+  .profile-stats {
+    gap:20px;
+  }
+
+  .modal-content {
+    padding:30px 20px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRODUÇÃO -->
+
+<div id="intro">
+  <div class="intro-logo">NK</div>
+  <div class="intro-text">NEW KREW #50</div>
+</div>
+
+<div id="toast" role="status"></div>
+
+<!-- MENU -->
+
+<header>
+  <div class="logo"><span>NK</span> NEW KREW</div>
+
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#team">TEAM</a>
+    <a href="#ranking">RANKING</a>
+    <a href="#events">EVENTS</a>
+    <a href="#chat">CHAT</a>
+    <a href="#support">SUPPORT</a>
+  </nav>
+
+  <div class="header-actions">
+    <button class="btn btn-outline" onclick="openModal('login')">
+      LOGIN
+    </button>
+    <button class="btn" onclick="openModal('register')">
+      REGISTER
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">STUMBLE GUYS COMPETITIVE COMMUNITY</div>
+
+    <h1>
+      NK NEW<br>
+      <span>KREW #50</span>
+    </h1>
+
+    <p>
+      Built for competition. Driven by skill.
+      United by one name. Welcome to NK New Krew,
+      a competitive Stumble Guys community.
+    </p>
+
+    <div class="hero-buttons">
+      <button class="btn" onclick="openModal('register')">
+        JOIN THE KREW
+      </button>
+
+      <a href="#team" class="btn btn-outline">
+        EXPLORE OUR TEAM
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-background">NK</div>
+</section>
+
+<!-- NÚMEROS -->
+
+<div class="stats">
+  <div class="stat">
+    <div class="big-number counter" data-target="30000">0</div>
+    <p>OWNER TROPHIES</p>
+  </div>
+
+  <div class="stat">
+    <div class="big-number counter" data-target="200">0</div>
+    <p>OWNER CROWNS</p>
+  </div>
+
+  <div class="stat">
+    <div class="big-number counter" data-target="50">0</div>
+    <p>CLAN NUMBER</p>
+  </div>
+
+  <div class="stat">
+    <div class="big-number counter" data-target="1">0</div>
+    <p>LISTED PLAYERS</p>
+  </div>
+</div>
+
+<!-- SOBRE -->
+
+<section class="container" id="about">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-label">WHO WE ARE</div>
+      <h2 class="section-title">MORE THAN<br>A CLAN.</h2>
+    </div>
+
+    <p class="section-description">
+      NK New Krew #50 is a Stumble Guys community
+      focused on competition, teamwork and player development.
+    </p>
+  </div>
+
+  <div class="grid">
+    <div class="info-card reveal">
+      <div class="number">01</div>
+      <h3>COMPETITION</h3>
+      <p>Competitive gameplay and continuous improvement.</p>
+    </div>
+
+    <div class="info-card reveal">
+      <div class="number">02</div>
+      <h3>COMMUNITY</h3>
+      <p>A place for players to connect and grow together.</p>
+    </div>
+
+    <div class="info-card reveal">
+      <div class="number">03</div>
+      <h3>PERFORMANCE</h3>
+      <p>Training, rankings and future competitive events.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CARDS ANIMADOS -->
+
+<section class="marquee-section">
+  <div class="marquee-title">
+    <div class="section-label">OUR COMMUNITY</div>
+    <h2 class="section-title">UNITED.<br>AS ONE.</h2>
+  </div>
+
+  <div class="marquee-row">
+    <div class="marquee-track" id="marquee1"></div>
+  </div>
+
+  <div class="marquee-row">
+    <div class="marquee-track reverse" id="marquee2"></div>
+  </div>
+</section>
+
+<!-- EQUIPE -->
+
+<section class="container" id="team">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-label">OUR PLAYERS</div>
+      <h2 class="section-title">THE KREW.</h2>
+    </div>
+
+    <p class="section-description">
+      Meet the players behind NK New Krew #50.
+    </p>
+  </div>
+
+  <div class="profile-grid">
+    <div class="profile-card reveal">
+      <div class="profile-avatar">NK</div>
+      <div class="profile-role">FOUNDER & OWNER</div>
+
+      <h3>Nkzinzzk</h3>
+
+      <div class="profile-stats">
+        <div>
+          <strong>30.000</strong>
+          <small>TROPHIES</small>
+        </div>
+
+        <div>
+          <strong>200</strong>
+          <small>CROWNS</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-card join-card reveal">
+      <div class="section-label">RECRUITMENT</div>
+      <h3>YOUR PLACE<br>IS WAITING.</h3>
+
+      <p>
+        Want to be part of NK New Krew?
+        Explore our community and future recruitment opportunities.
+      </p>
+
+      <button class="btn" onclick="openModal('register')">
+        CREATE ACCOUNT
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- RANKING -->
+
+<section class="container" id="ranking">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-label">COMPETITIVE STATS</div>
+      <h2 class="section-title">PLAYER RANKING.</h2>
+    </div>
+  </div>
+
+  <div class="table-wrap reveal">
+    <table class="ranking-table">
+      <thead>
+        <tr>
+          <th>POSITION</th>
+          <th>PLAYER</th>
+          <th>TROPHIES</th>
+          <th>CROWNS</th>
+          <th>ROLE</th>
+        </tr>
+      </thead>
+
+      <tbody id="rankingBody"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- TOP 10 -->
+
+<section class="container" id="topclans">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-label">COMMUNITY RANKING</div>
+      <h2 class="section-title">TOP 10 CLANS.</h2>
+    </div>
+
+    <p class="section-description">
+      Positions reserved for a future verified ranking.
+      This is not an official Stumble Guys leaderboard.
+    </p>
+  </div>
+
+  <div class="grid" id="clanCards"></div>
+</section>
+
+<!-- EVENTOS -->
+
+<section class="container" id="events">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-label">WHAT'S NEXT</div>
+      <h2 class="section-title">EVENTS.</h2>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="info-card reveal">
+      <div class="number">01</div>
+      <h3>NK CHAMPIONSHIP</h3>
+      <p>Internal competitive tournament. Schedule to be announced.</p>
+    </div>
+
+    <div class="info-card reveal">
+      <div class="number">02</div>
+      <h3>CLAN WARS</h3>
+      <p>Competitive matches against other Stumble Guys clans.</p>
+    </div>
+
+    <div class="info-card reveal">
+      <div class="number">03</div>
+      <h3>NK TRAINING</h3>
+      <p>Community training sessions. Details coming soon.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHAT -->
+
+<section class="container" id="chat">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-label">COMMUNITY SPACE</div>
+      <h2 class="section-title">NK CHAT.</h2>
+    </div>
+  </div>
+
+  <div class="chat-box reveal">
+    <div class="chat-header">
+      <strong>NK NEW KREW CHAT</strong>
+      <span>LOCAL PREVIEW</span>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+      <div class="message">
+        <strong>NK SYSTEM</strong>
+        <p>Welcome to NK New Krew #50.</p>
+      </div>
+    </div>
+
+    <div class="chat-input">
+      <input
+        type="text"
+        id="chatInput"
+        maxlength="300"
+        placeholder="Write a message..."
+      >
+
+      <button class="btn" onclick="sendMessage()">
+        SEND
+      </button>
+    </div>
+  </div>
+
+  <p class="section-description" style="margin-top:20px;max-width:650px">
+    This chat currently saves messages only in your browser.
+    Real private messaging requires Firebase Authentication,
+    Firestore and security rules.
+  </p>
+</section>
+
+<!-- SUPORTE -->
+
+<section class="container" id="support">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-label">CONTACT US</div>
+      <h2 class="section-title">SUPPORT CENTER.</h2>
+    </div>
+  </div>
+
+  <div class="support-grid">
+    <div class="support-text reveal">
+      <h3>NEED HELP?<br>WE'RE HERE.</h3>
+
+      <p>
+        Questions about recruitment, tournaments,
+        community rules or player accounts?
+        Use the support form to prepare your request.
+      </p>
+    </div>
+
+    <form class="form reveal" id="supportForm">
+      <input id="supportName" placeholder="Your nickname" required>
+
+      <select id="supportCategory">
+        <option>General support</option>
+        <option>Recruitment</option>
+        <option>Account issues</option>
+        <option>Tournaments</option>
+        <option>Report a problem</option>
+      </select>
+
+      <textarea
+        id="supportMessage"
+        placeholder="Describe your request..."
+        required
+      ></textarea>
+
+      <button class="btn" type="submit">
+        SUBMIT REQUEST
+      </button>
+
+      <p class="section-description">
+        Ticket delivery is not connected yet.
+        No request will be sent to staff.
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- AJUDA -->
+
+<section class="container" id="help">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-label">FREQUENTLY ASKED QUESTIONS</div>
+      <h2 class="section-title">HELP CENTER.</h2>
+    </div>
+  </div>
+
+  <div class="faq">
+    <details>
+      <summary>How can I join NK New Krew?</summary>
+      <p>Recruitment details will be announced by the clan administration.</p>
+    </details>
+
+    <details>
+      <summary>How do I update my trophies?</summary>
+      <p>Player statistics are currently managed in the website code.</p>
+    </details>
+
+    <details>
+      <summary>Can I participate in tournaments?</summary>
+      <p>Check the Events section for future announcements.</p>
+    </details>
+
+    <details>
+      <summary>How can I contact the staff?</summary>
+      <p>A real support ticket system will be available after backend integration.</p>
+    </details>
+
+    <details>
+      <summary>Is this an official Stumble Guys website?</summary>
+      <p>No. This is an independent community website.</p>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<!-- RODAPÉ -->
+
+<footer>
+  <h2><span>NK</span> NEW KREW #50</h2>
+  <p>COMPETITION. COMMUNITY. PERFORMANCE.</p>
+  <p>© 2026 NK NEW KREW. ALL RIGHTS RESERVED.</p>
+  <p>Independent fan community. Not officially affiliated with Stumble Guys.</p>
+</footer>
+
+<!-- LOGIN -->
+
+<div class="modal" id="loginModal">
+  <div class="modal-content">
+    <button class="close" onclick="closeModal('loginModal')">×</button>
+
+    <div class="section-label">MEMBER ACCESS</div>
+    <h2>LOGIN.</h2>
+
+    <form class="form" id="loginForm">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+
+      <button class="btn" type="submit">
+        SIGN IN
+      </button>
+    </form>
+
+    <p>
+      New here?
+      <a onclick="switchModal('loginModal','registerModal')">
+        Create account
+      </a>
+    </p>
+
+    <p>Authentication will be enabled after Firebase integration.</p>
+  </div>
+</div>
+
+<!-- CADASTRO -->
+
+<div class="modal" id="registerModal">
+  <div class="modal-content">
+    <button class="close" onclick="closeModal('registerModal')">×</button>
+
+    <div class="section-label">JOIN THE COMMUNITY</div>
+    <h2>REGISTER.</h2>
+
+    <form class="form" id="registerForm">
+      <input type="text" placeholder="Stumble Guys nickname" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" minlength="8" required>
+
+      <button class="btn" type="submit">
+        CREATE ACCOUNT
+      </button>
+    </form>
+
+    <p>
+      Already registered?
+      <a onclick="switchModal('registerModal','loginModal')">
+        Sign in
+      </a>
+    </p>
+
+    <p>No account is created until Firebase is connected.</p>
+  </div>
+</div>
+
+<script>
+
+/* INTRO */
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.getElementById("intro").classList.add("hide");
+  }, 1800);
+});
+
+
+/* ANIMAÇÕES DE ROLAGEM */
+
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.08});
+
+document.querySelectorAll(".reveal").forEach(el => {
+  revealObserver.observe(el);
+});
+
+
+/* NÚMEROS ANIMADOS */
+
+function animateNumber(el) {
+  const target = Number(el.dataset.target);
+  const start = performance.now();
+  const duration = 1700;
+
+  function frame(now) {
+    const progress = Math.min((now-start)/duration,1);
+    const eased = 1-Math.pow(1-progress,3);
+    const value = Math.floor(target*eased);
+
+    el.textContent = value.toLocaleString("pt-BR");
+
+    if (progress<1) {
+      requestAnimationFrame(frame);
+    }
+  }
+
+  requestAnimationFrame(frame);
+}
+
+const numberObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateNumber(entry.target);
+      numberObserver.unobserve(entry.target);
+    }
+  });
+});
+
+document.querySelectorAll(".counter").forEach(el => {
+  numberObserver.observe(el);
+});
+
+
+/* CARDS ANIMADOS */
+
+const row1 = [
+  "NK NEW KREW",
+  "NK ESPORTS",
+  "COMPETITIVE",
+  "STUMBLE GUYS",
+  "NK CHAMPIONSHIP",
+  "CLAN WARS",
+  "NK TRAINING",
+  "NEW GENERATION"
+];
+
+const row2 = [
+  "NKZINZZK",
+  "FOUNDER",
+  "OUR PLAYERS",
+  "THE KREW",
+  "RANKING",
+  "COMMUNITY",
+  "TOURNAMENTS",
+  "NK #50"
+];
+
+function createMarquee(id,items) {
+  const container = document.getElementById(id);
+
+  [...items,...items].forEach(name => {
+    const card = document.createElement("div");
+    card.className = "marquee-card";
+
+    const span = document.createElement("span");
+    span.textContent = name;
+
+    card.appendChild(span);
+    container.appendChild(card);
+  });
+}
+
+createMarquee("marquee1",row1);
+createMarquee("marquee2",row2);
+
+
+/* RANKING */
+
+const players = [
+  {
+    nick:"Nkzinzzk",
+    trophies:30000,
+    crowns:200,
+    role:"OWNER"
+  }
+];
+
+function renderRanking() {
+  const body = document.getElementById("rankingBody");
+  body.innerHTML = "";
+
+  [...players]
+    .sort((a,b)=>b.trophies-a.trophies)
+    .forEach((player,index) => {
+
+      const tr = document.createElement("tr");
+
+      const values = [
+        "#"+(index+1),
+        player.nick,
+        player.trophies.toLocaleString("pt-BR"),
+        player.crowns.toLocaleString("pt-BR"),
+        player.role
+      ];
+
+      values.forEach((value,i) => {
+        const td = document.createElement("td");
+        td.textContent = value;
+
+        if (i===0) td.className="rank-number";
+
+        tr.appendChild(td);
+      });
+
+      body.appendChild(tr);
+    });
+}
+
+renderRanking();
+
+
+/* TOP 10 CLÃS */
+
+const clans = Array(10).fill("NOT RANKED");
+
+const clanContainer = document.getElementById("clanCards");
+
+clans.forEach((name,index) => {
+  const card = document.createElement("div");
+  card.className="info-card reveal";
+
+  const number = document.createElement("div");
+  number.className="number";
+  number.textContent="#"+(index+1);
+
+  const title = document.createElement("h3");
+  title.textContent=name;
+
+  const description = document.createElement("p");
+  description.textContent="Awaiting verified clan data.";
+
+  card.append(number,title,description);
+  clanContainer.appendChild(card);
+
+  revealObserver.observe(card);
+});
+
+
+/* MODAIS */
+
+function openModal(id) {
+  document.getElementById(id).classList.add("active");
+}
+
+function closeModal(id) {
+  document.getElementById(id).classList.remove("active");
+}
+
+function switchModal(current,next) {
+  closeModal(current);
+  openModal(next);
+}
+
+document.querySelectorAll(".modal").forEach(modal => {
+  modal.addEventListener("click",event => {
+    if (event.target===modal) {
+      modal.classList.remove("active");
+    }
+  });
+});
+
+document.addEventListener("keydown",event => {
+  if (event.key==="Escape") {
+    document.querySelectorAll(".modal").forEach(modal => {
+      modal.classList.remove("active");
+    });
+  }
+});
+
+
+/* NOTIFICAÇÕES */
+
+let toastTimer;
+
+function showToast(message) {
+  const toast=document.getElementById("toast");
+
+  toast.textContent=message;
+  toast.classList.add("show");
+
+  clearTimeout(toastTimer);
+
+  toastTimer=setTimeout(() => {
+    toast.classList.remove("show");
+  },3500);
+}
+
+
+/* CHAT LOCAL */
+
+const chatKey="nk_new_krew_local_chat";
+
+function addChatMessage(author,text) {
+  const container=document.getElementById("chatMessages");
+
+  const box=document.createElement("div");
+  box.className="message";
+
+  const strong=document.createElement("strong");
+  strong.textContent=author;
+
+  const paragraph=document.createElement("p");
+  paragraph.textContent=text;
+
+  box.append(strong,paragraph);
+  container.appendChild(box);
+
+  container.scrollTop=container.scrollHeight;
+}
+
+function loadMessages() {
+  try {
+    const saved=JSON.parse(localStorage.getItem(chatKey)||"[]");
+
+    saved.forEach(item => {
+      addChatMessage(item.author,item.text);
+    });
+  } catch(error) {
+    console.warn("Unable to load local messages.");
+  }
+}
+
+function sendMessage() {
+  const input=document.getElementById("chatInput");
+  const text=input.value.trim();
+
+  if (!text) return;
+
+  addChatMessage("VISITOR",text);
+
+  try {
+    const saved=JSON.parse(localStorage.getItem(chatKey)||"[]");
+
+    saved.push({
+      author:"VISITOR",
+      text:text
+    });
+
+    localStorage.setItem(
+      chatKey,
+      JSON.stringify(saved.slice(-50))
+    );
+  } catch(error) {
+    showToast("Message displayed but not saved.");
+  }
+
+  input.value="";
+}
+
+document.getElementById("chatInput")
+  .addEventListener("keydown",event => {
+    if (event.key==="Enter") sendMessage();
+  });
+
+loadMessages();
+
+
+/* FORMULÁRIOS */
+
+document.getElementById("loginForm")
+  .addEventListener("submit",event => {
+    event.preventDefault();
+
+    showToast(
+      "Login unavailable: Firebase Authentication is not connected."
+    );
+  });
+
+document.getElementById("registerForm")
+  .addEventListener("submit",event => {
+    event.preventDefault();
+
+    showToast(
+      "Registration unavailable: Firebase Authentication is not connected."
+    );
+  });
+
+document.getElementById("supportForm")
+  .addEventListener("submit",event => {
+    event.preventDefault();
+
+    showToast(
+      "Ticket not sent: support backend is not configured."
+    );
+  });
+
+</script>
+
+</body>
+</html>
